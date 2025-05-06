@@ -23,7 +23,8 @@ const App = () => {
     setLoading(true);
     try {
       const res = await axios.post("http://localhost:11434/api/generate", {
-        model: "deepseek-r1:7b",
+        // model: "deepseek-r1:7b",
+        model: "llama3.1:8b",
         prompt:
           updatedMessages.map((m) => `${m.role}: ${m.content}`).join("\n") +
           "\nassistant:",
