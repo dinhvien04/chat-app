@@ -1,6 +1,6 @@
-# Chat App - Ứng dụng Chat Thời Gian Thực
+# Chat App - Trợ lý AI thời gian thực
 
-**Chat App** là một dự án ứng dụng chat thời gian thực được phát triển bằng React, TypeScript, Vite và tích hợp với công nghệ backend Ollama. Dự án mang đến một nền tảng giao tiếp hiện đại, nhanh chóng và thân thiện.
+**Chat App** một ứng dụng trò chuyện thời gian thực, nơi người dùng có thể tương tác trực tiếp với một trợ lý AI thông minh thông qua giao diện web hiện đại. Giao diện được thiết kế theo phong cách dark mode, tối giản, dễ nhìn, tạo trải nghiệm tự nhiên như đang trò chuyện với một người thật.
 
 ## Công nghệ sử dụng
 
@@ -15,12 +15,15 @@
 
 ## Tính năng nổi bật
 
-- **Giao tiếp thời gian thực**: Cho phép người dùng gửi và nhận tin nhắn ngay lập tức.
-- **Tích hợp frontend và backend hiện đại**: Sử dụng Ollama để xử lý backend, đảm bảo giao tiếp dữ liệu ổn định và nhanh chóng.
-- **Giao diện hiện đại**: Xây dựng với React, mang lại trải nghiệm sử dụng mượt mà và tối ưu.
-- **Hiệu suất cao**: Kết hợp giữa Vite và Ollama để đảm bảo hiệu năng cao cho cả frontend và backend.
-- **Kiểm tra mã nghiêm ngặt**: Sử dụng ESLint và các plugin mở rộng để đảm bảo chất lượng mã nguồn.
-
+- **Giao tiếp tự nhiên**:  Người dùng nhập câu hỏi bằng tiếng Việt, AI phản hồi tự động với nội dung thân thiện và chính xác.
+- **Xử lý phía client bằng React + TypeScript**: Giao diện phản hồi nhanh, xử lý mượt mà.
+- **Tích hợp AI Backend (Ollama)**: Backend sử dụng mô hình ngôn ngữ lớn (LLM) để phân tích và phản hồi câu hỏi.
+- **Thiết kế đẹp mắt, bố cục gọn gàng**: Tin nhắn được hiển thị phân biệt rõ giữa người dùng và AI, với phong cách màu sắc khác nhau.
+- **Hỗ trợ responsive**:  Có thể sử dụng được trên nhiều thiết bị (desktop, tablet, mobile).
+## Giao diện
+- Phần trên hiển thị tên trợ lý: AI Chat Assistant
+- Khung chat ở giữa, hiển thị các tin nhắn từ người dùng (màu xanh) và từ AI (màu xám)
+- Input message phía dưới có placeholder "Nhập câu hỏi của bạn..." và nút gửi hình mũi tên
 ## Cấu hình và mở rộng
 
 Dự án đi kèm với cấu hình ESLint mạnh mẽ, cho phép mở rộng dễ dàng khi cần:
