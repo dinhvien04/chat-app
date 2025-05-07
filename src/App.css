@@ -12,17 +12,21 @@ body, html {
 
 /* Container chính */
 .chat-container {
+  flex: 1;
+  min-width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
+  height: 100vh;
+  background: none;
+  padding: 0;
 }
 
 .chat-content {
   width: 100%;
-  max-width: 900px;
+  max-width: 700px;
   height: 90vh;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   background: rgba(17, 24, 39, 0.7);
@@ -30,10 +34,12 @@ body, html {
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
 }
 
 /* Header */
 .chat-header {
+  position: relative;
   padding: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(0, 0, 0, 0.2);
@@ -192,4 +198,154 @@ body, html {
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
+}
+
+/* Clear History Button */
+.clear-history-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-history-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Layout tổng cho app với sidebar */
+.chat-app-layout {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1c2e 0%, #0f172a 100%);
+}
+
+/* Sidebar */
+.chat-sidebar {
+  width: 290px;
+  background: rgba(17, 24, 39, 0.95);
+  border-right: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0.5rem 1rem 0.5rem;
+  gap: 1rem;
+  min-width: 220px;
+  max-width: 350px;
+  z-index: 2;
+}
+
+.new-chat-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.new-chat-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.chat-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.empty-list {
+  color: #9ca3af;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.chat-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(31, 41, 55, 0.7);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  border: 1px solid transparent;
+  position: relative;
+}
+.chat-list-item.selected {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #fff;
+  border: 1px solid #60a5fa;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+.chat-title {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.delete-chat-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0 0.3rem;
+  transition: background 0.15s;
+}
+.delete-chat-btn:hover {
+  background: rgba(239, 68, 68, 0.12);
+}
+
+/* Responsive: Ẩn sidebar trên mobile, hoặc chuyển sang dạng overlay nếu muốn */
+@media (max-width: 700px) {
+  .chat-app-layout {
+    flex-direction: column;
+  }
+  .chat-sidebar {
+    width: 100vw;
+    min-width: unset;
+    max-width: unset;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0.5rem 0.2rem;
+    gap: 0.5rem;
+  }
+  .chat-list {
+    flex-direction: row;
+    gap: 0.5rem;
+    overflow-x: auto;
+    overflow-y: unset;
+  }
+  .chat-list-item {
+    min-width: 160px;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .chat-content {
+    max-width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
 }
