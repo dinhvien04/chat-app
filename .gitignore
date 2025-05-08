@@ -22,3 +22,28 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+DB_HOST=127.0.0.1
+DB_PORT=3309
+DB_USER=root
+DB_PASSWORD=12345@
+DB_NAME=chatapp
+JWT_SECRET=mysecretkey123
